@@ -13,6 +13,7 @@ export class UserService {
         .pipe(csv())
         .on('data', (data) => results.push(data))
         .on('end', () => {
+          console.log(results.filter(user => user.phone === phone))
           resolve(results.filter(user => user.phone === phone)[0])
         })
     })

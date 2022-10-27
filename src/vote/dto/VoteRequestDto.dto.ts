@@ -1,11 +1,11 @@
-import { IsString, IsNotEmpty } from "class-validator";
+import { IsString, IsNotEmpty, IsNumber } from "class-validator";
 
 export class VoteRequestDto {
   @IsString()
   @IsNotEmpty()
   readonly phone: string;
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
   readonly vote: 0 | 1;
 }
